@@ -28,4 +28,8 @@ After a successful build you can start the web application by executing the foll
 dotnet run src/firstGiraffe
 ```
 
-After the application has started visit [http://localhost:5000](http://localhost:5000) in your preferred browser.
+After the application has started visit [http://localhost:5000](http://localhost:5000) in your preferred browser. 
+
+## Extras
+
+You must have the 2.2 version of dotnet
