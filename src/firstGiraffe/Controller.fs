@@ -30,14 +30,14 @@ module Controller =
     let getMessage =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             task {
-                let response = MongoCRUD.readOnId 
+                let response = MongoCRUD.readAll 
                 return! json response next ctx
             }
 (*
     let getMessagefromid =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             task {
-                let response = MongoCRUD.readAll
+                let response = MongoCRUD.readOnId
                 return! json response next ctx
             }
             *)
