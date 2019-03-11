@@ -7,7 +7,7 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
-open firstGiraffe.HttpHandlers
+open firstGiraffe.Controller
 
 // ---------------------------------
 // Web app
@@ -18,8 +18,15 @@ let webApp =
         subRoute "/api"
             (choose [
                 GET >=> choose [
-                    route "/hello" >=> handleGetHello
+                    //route "/hello" >=> handleGetHello
+                    //route "/obj" >=> handleObj
+                    route "/message" >=> getMessage
                 ]
+                (*
+                POST >=> choose [
+                    routef "/newmessage/%s" >=> insertMessage
+                ]
+                *)
             ])
         setStatusCode 404 >=> text "Not Found" ]
 
