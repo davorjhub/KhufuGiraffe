@@ -18,15 +18,32 @@ let webApp =
         subRoute "/api"
             (choose [
                 GET >=> choose [
+                    
+
+                    
+                    route "/profiles/">=> getProfile
+                    subRoutef "/%s" (fun lang ->
+                        choose [
+                            routef "/%s" (fun n -> getProfileFromId n)
+                        ])
+                    
+                    
+                    
+                    (*//route "/newProfile" >=> redirectTo true "/profiles" 
                     //route "/hello" >=> handleGetHello
                     //route "/obj" >=> handleObj
-                    route "/message" >=> getMessage
+                    //route "/profiles">=> getProfile
+                    //route "/searchID" >=> getProfileFromId *)
+                    
                 ]
-                (*
+                
                 POST >=> choose [
-                    routef "/newmessage/%s" >=> insertMessage
+                    route "/newProfile" >=> insertProfile 
+                    //routef "/%s " >=> getProfileFromId
+                    //routef "/searchID" >=> getProfileFromId
+                   //routef "/newProfile/%s" >=> insertProfile %s
                 ]
-                *)
+                
             ])
         setStatusCode 404 >=> text "Not Found" ]
 
