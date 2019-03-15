@@ -37,3 +37,4 @@ module MongoCRUD =
     // Single Creation
     let create ( messageToInsert : Message ) = 
         testCollection.InsertOne( messageToInsert )
+        messageToInsert

@@ -22,11 +22,11 @@ let webApp =
                     //route "/obj" >=> handleObj
                     route "/message" >=> getMessage
                 ]
-                (*
+                
                 POST >=> choose [
-                    routef "/newmessage/%s" >=> insertMessage
+                    route "/newmessage" >=> insertMessage
                 ]
-                *)
+                
             ])
         setStatusCode 404 >=> text "Not Found" ]
 

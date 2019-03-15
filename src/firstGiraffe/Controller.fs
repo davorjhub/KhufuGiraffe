@@ -41,16 +41,14 @@ module Controller =
                 return! json response next ctx
             }
             *)
-(*
-    let insertMessage text =
+
+    let insertMessage =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             task {
-                let lilmessage = {
-                    Id = BsonObjectId.Create 
-                    Text = text
-                }
-                let response = MongoCRUD.create lilmessage
-
+                //let save = ctx.GetService<Message>()
+                let! mess = ctx.BindJsonAsync<Message>()
+                let mess = {mess with Id = BsonObjectId.GenerateNewId()}
+                let response = MongoCRUD.create mess
                 return! json response next ctx
             } 
-*)
+
