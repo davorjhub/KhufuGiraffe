@@ -1,4 +1,4 @@
-tests/firstGiraffe.Tests/obj/
-tests/firstGiraffe.Tests/bin/
-src/firstGiraffe/obj/
-src/firstGiraffe/bin/
+tests/firstGiraffe.Tests/obj/*
+tests/firstGiraffe.Tests/bin/*
+src/firstGiraffe/obj/*
+src/firstGiraffe/bin/*
